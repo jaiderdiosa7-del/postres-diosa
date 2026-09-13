@@ -8,11 +8,18 @@ export function AuthProvider({ children }) {
         localStorage.getItem("usuario")
     );
 
-    function iniciarSesion(nombre) {
+    function iniciarSesion(nombre, contraseña) {
 
-        setUsuario(nombre);
+        if (nombre === "jaider" && contraseña === "2009") {
 
-        localStorage.setItem("usuario", nombre);
+            setUsuario(nombre);
+
+            localStorage.setItem("usuario", nombre);
+
+            return true;
+        }
+
+        return false;
     }
 
     function cerrarSesion() {
@@ -39,3 +46,4 @@ export function useAuth() {
 
     return useContext(AuthContext);
 }
+

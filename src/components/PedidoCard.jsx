@@ -9,7 +9,7 @@ function PedidoCard({
 
     return (
 
-        <div className="bg-white rounded-2xl shadow p-5">
+        <div className="bg-gradient-to-br from-[#05000A] via-[#16002B] to-[#0B3B8F] border border-white text-white rounded-2xl shadow p-5">
 
             <div className="flex justify-between items-start">
 
@@ -19,38 +19,34 @@ function PedidoCard({
                         {pedido.cliente}
                     </h2>
 
-                    <p>📞 {pedido.telefono}</p>
+                    <p> {pedido.telefono}</p>
 
-                    <p>📍 {pedido.direccion}</p>
+                    <p> {pedido.direccion}</p>
 
                 </div>
 
-                <EstadoPedido
-                    estado={pedido.estado}
-                    onCambiarEstado={(nuevoEstado) =>
-                        onCambiarEstado(pedido.id, nuevoEstado)
-                    }
-                />
+                <EstadoPedido estado= {pedido.estado} />
 
             </div>
 
             <hr className="my-4" />
 
             <p>
-                🍰 Sabor: <strong>{pedido.sabor}</strong>
+                 Sabor: <strong>{pedido.sabor}</strong>
             </p>
 
             <p>
-                🔢 Cantidad: <strong>{pedido.cantidad}</strong>
+                 Cantidad: <strong>{pedido.cantidad}</strong>
             </p>
 
             <p>
-                💰 Precio: <strong>${pedido.precio}</strong>
+                 Precio: <strong>${pedido.precio}</strong>
             </p>
 
             <div className="flex gap-3 mt-4">
 
                 <button
+                    type="button"
                     onClick={() => onEditar(pedido)}
                     className="bg-blue-500 text-white px-4 py-2 rounded-lg"
                 >
@@ -58,7 +54,7 @@ function PedidoCard({
                 </button>
 
                 <button
-                    onClick={() => onEliminar(pedido.id)}
+                    onClick={() => onEliminar(pedido)}
                     className="bg-red-500 text-white px-4 py-2 rounded-lg"
                 >
                     Eliminar
