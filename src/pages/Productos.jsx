@@ -302,30 +302,24 @@ function Productos() {
 
                     
 
-                    <div className="flex gap-3 mt-6">
+                    <div className="flex gap-3 mt-6 flex-wrap">
 
                         <button
                             type="submit"
                             className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg font-bold"
                         >
-
                             {productoEditando
                                 ? "Actualizar producto"
                                 : "Crear producto"}
-
                         </button>
 
-                        {productoEditando && (
-
-                            <button
-                                type="button"
-                                onClick={cancelarEdicion}
-                                className="bg-gray-500 hover:bg-gray-600 text-white px-5 py-3 rounded-lg font-bold"
-                            >
-                                Cancelar edición
-                            </button>
-
-                        )}
+                        <button
+                            type="button"
+                            onClick={cancelarEdicion}
+                            className="bg-gray-500 hover:bg-gray-600 text-white px-5 py-3 rounded-lg font-bold"
+                        >
+                            Gestionar productos
+                        </button>
 
                     </div>
 
