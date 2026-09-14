@@ -18,7 +18,7 @@ function FormularioPedido({
         estado: "Pendiente"
     });
 
-    const [productos, setProductos] = useState(true)
+    const [productos, setProductos] = useState([])
 
     const [cargandoProductos, setCargandoProductos] = useState(true)
 
@@ -29,7 +29,8 @@ useEffect(() => {
         try{
             const datos = await listarProductos();
             setProductos(datos);
-        } catch(error){("Error al cargar productos", error);
+        } catch(error){
+            console.error("Error al cargar productos", error);
         }finally{
             setCargandoProductos(false)
         }
