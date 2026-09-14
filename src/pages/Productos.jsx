@@ -181,7 +181,7 @@ function Productos() {
 
             <Navbar />
 
-            <main className="p-8 bg-gradient-to-br from-black via-blue-900 to-purple-800 min-h-screen">
+            <main className="min-h-screen w-full p-8 bg-gradient-to-br from-black via-blue-900 to-purple-800 min-h-screen">
 
                 <h1 className="text-white text-4xl font-bold mb-8">
                     Productos

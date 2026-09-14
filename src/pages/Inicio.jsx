@@ -8,7 +8,7 @@ function Inicio() {
 
             <Navbar />
 
-            <main className="min-h-screen bg-gradient-to-br from-black via-blue-900 to-purple-800 p-8">
+            <main className="min-h-screen w-full bg-gradient-to-br from-black via-blue-900 to-purple-800 p-8">
 
                 {/* BIENVENIDA */}
 

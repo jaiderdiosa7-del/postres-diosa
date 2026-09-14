@@ -179,7 +179,7 @@ function Pedidos() {
 
             <Navbar />
 
-            <main className="min-h-screen p-8 border border-white bg-gradient-to-br from-black via-purple-950 to-fuchsia-950">
+            <main className="min-h-screen w-full p-8 border border-white bg-gradient-to-br from-black via-purple-950 to-fuchsia-950">
 
                 <h1 className="text-white text-4xl font-bold mb-6">
                     Pedidos
