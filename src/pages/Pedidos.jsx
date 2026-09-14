@@ -112,7 +112,7 @@ function Pedidos() {
 
             setTimeout(() => {
                 setMensaje("");
-            }, 1000);
+            }, 500);
 
         } catch (error) {
 

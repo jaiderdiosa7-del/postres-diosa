@@ -10,7 +10,7 @@ function Inicio() {
 
             <main className="min-h-screen w-full bg-gradient-to-br from-black via-blue-900 to-purple-800 p-8">
 
-                {/* BIENVENIDA */}
+                
 
                 <section className="text-center max-w-4xl mx-auto pt-10">
 
@@ -35,7 +35,7 @@ function Inicio() {
 
                 <section className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-14">
 
-                    {/* PEDIDOS */}
+                    
 
                     <div className="bg-gradient-to-br from-black via-[#080F25] to-blue-800 border border-blue-500/30 p-7 rounded-2xl shadow-xl hover:scale-105 transition duration-300">
 
