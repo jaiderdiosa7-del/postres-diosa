@@ -36,7 +36,7 @@ useEffect(() => {
         }
 
     }
-    cargandoProductos()
+    cargarProductos()
 },[])    
 
 useEffect(() => {
