@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import {listarProductos} from "../services/api";
+
 function FormularioPedido({
     onGuardar,
     pedidoEditando,
@@ -16,7 +18,25 @@ function FormularioPedido({
         estado: "Pendiente"
     });
 
+    const [productos, setProductos] = useState(true)
+
+    const [cargandoProductos, setCargandoProductos] = useState(true)
+
     const [errores, setErrores] = useState({});
+
+useEffect(() => {
+    async function cargarProductos() {
+        try{
+            const datos = await listarProductos();
+            setProductos(datos);
+        } catch(error){("Error al cargar productos", error);
+        }finally{
+            setCargandoProductos(false)
+        }
+
+    }
+    cargandoProductos()
+},[])    
 
 useEffect(() => {
     if (pedidoEditando) {
@@ -193,12 +213,12 @@ useEffect(() => {
                         onChange={manejarCambio}
                         className="border p-3 rounded-lg w-full"
                     >
-                        <option className="bg-blue-200 text-black">Maracuyá</option>
-                        <option className="bg-blue-200 text-black">Mora</option>
-                        <option className="bg-blue-200 text-black">Lulo</option>
-                        <option className="bg-blue-200 text-black">Mango</option>
-                        <option className="bg-blue-200 text-black">Limón</option>
-                        <option className="bg-blue-200 text-black">Banano</option>
+                        <option value="">Seleccione un sabor</option>
+                        {productos.map((producto) =>(
+                            <option key={producto.id} value={producto.nombre}>
+                                {producto.nombre}
+                            </option>
+                        ))}
                     </select>
 
                 </div>
