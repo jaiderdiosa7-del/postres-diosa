@@ -214,9 +214,9 @@ useEffect(() => {
                         onChange={manejarCambio}
                         className="border p-3 rounded-lg w-full"
                     >
-                        <option value="">Seleccione un sabor</option>
+                        <option className="bg-blue-200 text-black" value="">Seleccione un sabor</option>
                         {productos.map((producto) =>(
-                            <option key={producto.id} value={producto.nombre}>
+                            <option className="bg-blue-200 text-black" key={producto.id} value={producto.nombre}>
                                 {producto.nombre}
                             </option>
                         ))}
