@@ -20,11 +20,15 @@ function Productos() {
         precio: 0
     });
 
+    const [vista, setVista] = useState("gestionar");
+
     const [productoEditando, setProductoEditando] = useState(null);
 
     const [mensaje, setMensaje] = useState("");
 
     const [productoAEliminar, setProductoAEliminar] = useState(null);
+
+    
 
     useEffect(() => {
 
@@ -100,6 +104,8 @@ function Productos() {
 
             setProductoEditando(null);
 
+            setVista("gestionar");
+
             cargarProductos();
 
         } catch (error) {
@@ -126,6 +132,7 @@ function Productos() {
         });
 
         setMensaje("");
+        setVista("crear");
     }
 
     function solicitarEliminarProducto(producto) {
@@ -173,6 +180,23 @@ function Productos() {
         });
 
         setMensaje("");
+        
+        setVista("gestionar");
+    }
+
+    function mostrarCrearProducto() {
+
+    setProductoEditando(null);
+
+    setFormulario({
+        nombre: "",
+        categoria: "",
+        precio: 0
+    });
+
+    setMensaje("");
+
+    setVista("crear");
     }
 
     return (
@@ -187,12 +211,24 @@ function Productos() {
                     Productos
                 </h1>
 
+                {vista === "gestionar" && (
+                    <button
+                        type="button"
+                        onClick={mostrarCrearProducto}
+                        className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-lg font-bold mb-8"
+                    >
+                        + Crear producto
+                    </button>
+                )}
+
                 
  
-                <form
-                    onSubmit={manejarSubmit}
-                    className="bg-slate-950 text-white p-6 rounded-2xl shadow-lg mb-8"
-                >
+                
+                    {vista === "crear" && (
+                        <form
+                            onSubmit={manejarSubmit}
+                            className="bg-slate-950 text-white p-6 rounded-2xl shadow-lg mb-8"                      
+                        >
 
                     <h2 className="text-2xl font-bold mb-6">
 
@@ -302,6 +338,7 @@ function Productos() {
                     )}
 
                 </form>
+                )}
 
                 {productoAEliminar && (
 
@@ -341,6 +378,7 @@ function Productos() {
                         </div>
 
                     </div>
+
 
                 )}
 
