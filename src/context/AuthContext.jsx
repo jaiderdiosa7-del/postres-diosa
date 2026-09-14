@@ -10,6 +10,9 @@ export function AuthProvider({ children }) {
 
     function iniciarSesion(nombre, contraseña) {
 
+        nombre= nombre.trim();
+        contraseña = setContraseña.trim();
+
         if (nombre === "jaider" && contraseña === "2009") {
 
             setUsuario(nombre);
